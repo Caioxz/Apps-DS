@@ -15,8 +15,8 @@
         private int pontosPlayer2 = 0;
         private JTextField nomeJogo1;
         private JTextField nomeJogo2;
-        private JLabel nome1;
-        private JLabel nome2;
+        private JLabel nomePlayer1;
+        private JLabel nomePlayer2;
         private JButton newGame;
         private JButton resetScore; // Botão para zerar o placar
         private JButton[][] buttons;
@@ -38,11 +38,11 @@
             JPanel jogador1 = new JPanel();
             jogador1.setLayout(null);
 
-            nome1 = new JLabel("Nome do jogador  X: ");
-            nome1.setBounds(10, 10, 200, 50);
-            nome1.setFont(new Font("Poppins", Font.PLAIN, 20));
-            nome1.setForeground(Color.BLACK);
-            jogador1.add(nome1);
+            nomePlayer1 = new JLabel("Nome do jogador  X: ");
+            nomePlayer1.setBounds(10, 10, 200, 50);
+            nomePlayer1.setFont(new Font("Poppins", Font.PLAIN, 20));
+            nomePlayer1.setForeground(Color.BLACK);
+            jogador1.add(nomePlayer1);
 
             nomeJogo1 = new JTextField();
             nomeJogo1.setBounds(220, 20, 170, 30);
@@ -61,11 +61,11 @@
             JPanel jogador2 = new JPanel();
             jogador2.setLayout(null);
 
-            nome2 = new JLabel("Nome do jogador  O: ");
-            nome2.setBounds(10, 10, 200, 50);
-            nome2.setFont(new Font("Poppins", Font.PLAIN, 20));
-            nome2.setForeground(Color.BLACK);
-            jogador2.add(nome2);
+            nomePlayer2 = new JLabel("Nome do jogador  O: ");
+            nomePlayer2.setBounds(10, 10, 200, 50);
+            nomePlayer2.setFont(new Font("Poppins", Font.PLAIN, 20));
+            nomePlayer2.setForeground(Color.BLACK);
+            jogador2.add(nomePlayer2);
 
             
             
