@@ -141,7 +141,6 @@ private ImageIcon imagemCarro;
 			});
 
 			add(txEmail);
-			
 			marca = new JLabel("Marca:");
 			marca.setBounds(10,230,90,50);
 			marca.setFont(new Font("Poppins",Font.PLAIN,20));
