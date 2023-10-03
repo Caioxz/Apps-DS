@@ -27,19 +27,14 @@ public  class Calculadora extends JDialog implements ActionListener{
 			this.setResizable(false);
 	
 		
-				 JPanel painel = new JPanel() {
-			            @Override
-			            /* Criando um paint para desenha a imagem e chamar ela*/
-			            protected void paintComponent(Graphics g) {
-			            	/* Chamando a variavel "g" com o super*/
-			                super.paintComponent(g);
-			                Image img = new ImageIcon("src/imgCalc/ceu.jpg").getImage();
-			                /* drawImage serve para desenhar a imagem, como aumentar a imagem ou mexer ou eixo x e y*/
-			                g.drawImage(img, 0, 0, getWidth(), 670, this);
-			            }
-			        };
-			        painel.setLayout(null);
-			
+					JLabel imgCalc = new JLabel();
+					imgCalc.setBounds(0, 0, 670, 670);
+					ImageIcon caio = new ImageIcon("src/imgCalc/ceu.jpg");
+					Image boardCaio = caio.getImage().getScaledInstance(imgCalc.getWidth(), imgCalc.getHeight(), Image.SCALE_SMOOTH);
+					ImageIcon newCaio = new ImageIcon(boardCaio);
+					imgCalc.setIcon(newCaio);
+					add(imgCalc);
+						  
 			JButton soma = new JButton("Somar");
 			soma.setBounds(20,400,150,30);
 			soma.setFont(new Font("Poppins", Font.PLAIN,20));
@@ -80,10 +75,6 @@ public  class Calculadora extends JDialog implements ActionListener{
 			divisao.addActionListener(this::divisao);
 			
 	
-			painel.add(soma);
-			painel.add(subtracao);
-			painel.add(multiplicacao);
-			painel.add(divisao);
 			
 			
 			
@@ -126,23 +117,19 @@ public  class Calculadora extends JDialog implements ActionListener{
 			title.setForeground(Color.WHITE);
 			add(title);
 			
-			/* adicionando os buttons,TextsFilds,label e title em cima do painel para a imagem ficar no background*/
-			painel.add(soma);
-			painel.add(subtracao);
-			painel.add(multiplicacao);
-			painel.add(divisao);
-			painel.add(num2);
-			painel.add(num1);
-			painel.add(label1);
-			painel.add(label2);
-			painel.add(title);
-			
-			
+		
+				imgCalc.add(title);
+				imgCalc.add(subtracao);
+				imgCalc.add(soma);
+				imgCalc.add(label2);
+				imgCalc.add(divisao);
+				imgCalc.add(multiplicacao);
+				imgCalc.add(label1);
 			
 			this.setLayout(null);
 			this.setVisible(true);	
 			/* setContentPane serve para mostrar qual painel vai ser principal*/
-			  setContentPane(painel);
+		
 			}
 		
 		
