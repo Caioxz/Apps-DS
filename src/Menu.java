@@ -18,6 +18,7 @@ public class Menu extends JFrame{
 	JLabel title;
 	private Concessionaria concessionariaDialog;
 	private Calculadora calculadoraDialog;
+	private JogoVelha tictactoeDialog;
 	
 	public Menu() {
 		this.setTitle("Projetos");
@@ -78,8 +79,8 @@ public class Menu extends JFrame{
 		painel.setLayout(null);
 		
 		title = new JLabel();
-		title.setText("Seja bem-vindo ao nosso menu");
-		title.setBounds(340, 20, 800, 400);
+		title.setText("Seja bem-vindo ao nosso menu de apps");
+		title.setBounds(340, 20, 900, 400);
 		title.setHorizontalAlignment(SwingConstants.CENTER);
 		title.setFont(new Font("Poppins",Font.PLAIN,50));
 		title.setForeground(Color.WHITE);
@@ -152,7 +153,9 @@ public class Menu extends JFrame{
 
 			@Override
 			public void actionPerformed(ActionEvent events) {
-				JogoVelha ticTacToe = new JogoVelha();
+				if(tictactoeDialog == null){
+					JogoVelha tictactoeDialog = new JogoVelha(Menu.this);
+				}
 				ticTacToe.setVisible(true);
 				
 				

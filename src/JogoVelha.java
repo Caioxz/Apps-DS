@@ -25,13 +25,14 @@
         private JLabel pontosLabel1;
         private JLabel pontosLabel2;
 
-        public JogoVelha() {
+        public JogoVelha(Menu tictacToe) {
             this.setTitle("Jogo da Velha");
             this.setSize(780, 630);
             this.setLocationRelativeTo(null);
             this.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
             this.getContentPane().setBackground(Color.WHITE);
             this.setResizable(false);
+            this.setModal(true);
 
             JTabbedPane tabbedPane = new JTabbedPane();
 

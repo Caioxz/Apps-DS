@@ -40,27 +40,18 @@ private ImageIcon imagemCarro;
 
 	
 
-			 JPanel painel = new JPanel();
-			 painel.setLayout(null);
+			 
 
 
 			JLabel imgLogo = new JLabel();
             imgLogo.setBounds(20, -40, 240, 220);
             ImageIcon boardimg = new ImageIcon("src/carros/cdCar.png");
-            Image boardRe = boardimg.getImage().getScaledInstance(imgLogo.getWidth(), imgLogo.getHeight(), Image.SCALE_SMOOTH);
-            ImageIcon newBoard = new ImageIcon(boardRe);
+            Image boardCar = boardimg.getImage().getScaledInstance(imgLogo.getWidth(), imgLogo.getHeight(), Image.SCALE_SMOOTH);
+            ImageIcon newBoard = new ImageIcon(boardCar);
             imgLogo.setIcon(newBoard);
-            painel.add(imgLogo);
+            add(imgLogo);
 		          
-			
-		       
-		        
-		     
-		        
-		        
-		     
-		       
-		
+
 			title = new JLabel("Concessionária CD AutoCars");
 			title.setBounds(215,-70,400,300);
 			title.setFont(new Font("Poppins",Font.PLAIN,30));
@@ -139,8 +130,8 @@ private ImageIcon imagemCarro;
 			    public void keyReleased(KeyEvent e) {
 			    }
 			});
-
 			add(txEmail);
+
 			marca = new JLabel("Marca:");
 			marca.setBounds(10,230,90,50);
 			marca.setFont(new Font("Poppins",Font.PLAIN,20));
@@ -226,7 +217,6 @@ private ImageIcon imagemCarro;
 		        opcionais.setFont(new Font("Poppins", Font.PLAIN, 20));
 		        opcionais.setForeground(Color.BLACK);
 		        add(opcionais);
-		        painel.add(opcionais);
 		        
 		        Arcondicionado = new JCheckBox("Ar Condicionado");
 		        Arcondicionado.setBounds(10, 470, 180, 30);
@@ -278,17 +268,17 @@ private ImageIcon imagemCarro;
 				
 					
 						if (arSelected) {
-						    mensagem += " Ar Condicionado " /*+ valorAr + " R$\n"*/;
+						    mensagem += " Ar Condicionado ";
 						   
 						}
 						if (hidrauSelected) {
-						    mensagem += " Direção Hidráulica " /*+ valorDire + " R$\n"*/;
+						    mensagem += " Direção Hidráulica ";
 						}
 						if (rodasSelected) {
-						    mensagem += " Rodas Leve " /*+ valorRodas + " R$\n"*/;
+						    mensagem += " Rodas Leve ";
 						}
 						if (multiSelected) {
-						    mensagem += " Multimídia-" /*+ valorMulti + " R$\n"*/;
+						    mensagem += " Multimídia-";
 						}
 
 
@@ -329,41 +319,22 @@ private ImageIcon imagemCarro;
 		           }
 		        });
 
-		        botoesPanel.add(salvar);
-		        botoesPanel.add(cancelar);
+				botoesPanel.add(salvar);
+				botoesPanel.add(cancelar);
+				add(botoesPanel);
 		     
 			
 		        imageLabel = new JLabel();
+				add(imageLabel);
 			
 			/* adicionando os buttons,TextsFilds,label e title em cima do painel para a imagem ficar no background*/
 
-			painel.add(title);
-			painel.add(txNome);
-			painel.add(nome);
-			painel.add(celular);
-			painel.add(txCelular);
-			painel.add(email);
-			painel.add(txEmail);
-			painel.add(marca);
-			painel.add(cbMarca);
-			painel.add(modelo);
-			painel.add(cbModelo);
-			painel.add(Arcondicionado);
-			painel.add(Hidraulica);
-			painel.add(rodasLeve);
-			painel.add(Multimidaia);
-			painel.add(rbBranco);
-			painel.add(rbVermelho);
-			painel.add(rbPreto);
-			painel.add(botoesPanel);
-			painel.add(imageLabel);
-		
+			
+				
 		
 			
 			this.setLayout(null);
 			this.setVisible(true);	
-			/* setContentPane serve para mostrar qual painel vai ser principal*/
-			  setContentPane(painel);
 			}
 		
 		private void alimentoCombo() {
@@ -398,7 +369,7 @@ private ImageIcon imagemCarro;
 		        if ("Modelo".equals(modeloSelected)) {
 		            // Limpar o JLabel se nenhum modelo for selecionado
 		            imageLabel.setIcon(null);
-		           
+
 		        }
 		        
 		        String imagePath = "src/carros/";  // Defina o caminho da imagem corretamente
